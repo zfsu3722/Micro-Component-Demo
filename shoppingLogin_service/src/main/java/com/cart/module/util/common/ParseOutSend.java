@@ -3,6 +3,7 @@ package com.cart.module.util.common;
 import com.cart.entities.OutData;
 import com.cart.entities.OutputParam;
 import com.cart.module.util.httpInvoke.Interface.AcceptMassage;
+import com.cart.module.util.workflowcontrol.MainWorkFlowController;
 
 import java.util.HashMap;
 import java.util.List;
@@ -13,14 +14,18 @@ public class ParseOutSend {
         HashMap<String,Object> outMap = new HashMap<>();
         String destRef = outputParam.getDestRef();
         List<OutData> outDatas = outputParam.getOutDatas();
+        String keyPrefix="";
+        if(!destRef.equals(MainWorkFlowController.CONTROL_FLAG))
+        {
+            keyPrefix=preKey + KEY_SPLIT;
+        }
         for (OutData o : outDatas){
             String funcParamId = o.getFuncParamId();
             String destParamId = o.getDestParamId();
-            String key = preKey + KEY_SPLIT + destParamId;
+            String key = keyPrefix + destParamId;
             outMap.put(key,funcParam.get(funcParamId));
         }
-        HashMap<String,Object> returnMap = sendToDest(destRef,outMap);
-        return returnMap;
+        return outMap;
     }
     public static HashMap<String,Object> sendToDest(String destRef,HashMap<String,Object> outMap){
         AcceptMassage acceptMassage;
