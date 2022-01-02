@@ -1,9 +1,3 @@
 # Micro-Component-Demo
 
-Configuration 1:
-
-The images in goodsImg directory should be stored in a local directory of deployment. The configuration property defined in mainController/src/main/resources/config_properties/image.properties should be set as the directory containing all the images in goodsImg directory.
-
-Configuration 2:
-
-The XML files containing configurations relevant to SCONDAS API are stored in directory, src/main/resources/config_xml, of each service project. The configuration XML files of each service should be stored in a local directory of deployment specific to the service. A Micro-Component service stores the configuration of SCANDAS API configuration XML file directory settings in src/main/resources/config_properties/configXml.properties. A Micro-Component controller stores the configuration of control XML file directory settings in src/main/resources/config_properties/sequencePath.properties. The corresponding directories should be properly set in these configuration files.
+This is a demo of SCANDAS API scheme and Micro-Component architecture. The demo demonstrates the flexibility and low-code feature of SCANDAS API scheme and Micro-Component architecture, when used to composite multiple microservices to form functions.
