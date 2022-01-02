@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<nodes>
+    <taskId>itemList</taskId>
+    <sequence>
+
+        <node>
+            <id>getItemList</id>
+            <step>1</step>
+            <execRef>itemList_service</execRef>
+            <refTag>remoteNode</refTag>
+        </node>
+
+        <node>
+            <id>getStaffMsg</id>
+            <step>2</step>
+            <execRef>staffMsg_service</execRef>
+            <refTag>remoteNode</refTag>
+        </node>
+
+        <node>
+            <id>getItemJoin</id>
+            <step>3</step>
+            <execRef>itemJoin_service</execRef>
+            <refTag>remoteNode</refTag>
+        </node>
+
+
+        <node>
+            <id>getItemRefundList</id>
+            <step>4</step>
+            <execRef>accept_service</execRef>
+            <refTag>localNode</refTag>
+        </node>
+
+
+    </sequence>
+</nodes>
