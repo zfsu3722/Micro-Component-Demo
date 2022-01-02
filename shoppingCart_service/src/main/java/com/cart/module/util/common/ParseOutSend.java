@@ -6,21 +6,25 @@ import com.cart.module.util.httpInvoke.Interface.AcceptMassage;
 
 import java.util.HashMap;
 import java.util.List;
-
+import com.cart.module.util.workflowcontrol.MainWorkFlowController;
 public class ParseOutSend {
     private static final String KEY_SPLIT = ".";
     public static HashMap<String,Object> parseDestRef(OutputParam outputParam, String preKey, HashMap<String,Object> funcParam){
         HashMap<String,Object> outMap = new HashMap<>();
         String destRef = outputParam.getDestRef();
         List<OutData> outDatas = outputParam.getOutDatas();
+        String keyPrefix="";
+        if(!destRef.equals(MainWorkFlowController.CONTROL_FLAG))
+        {
+            keyPrefix=preKey + KEY_SPLIT;
+        }
         for (OutData o : outDatas){
             String funcParamId = o.getFuncParamId();
             String destParamId = o.getDestParamId();
-            String key = preKey + KEY_SPLIT + destParamId;
+            String key = keyPrefix + destParamId;
             outMap.put(key,funcParam.get(funcParamId));
         }
-        HashMap<String,Object> returnMap = sendToDest(destRef,outMap);
-        return returnMap;
+        return outMap;
     }
     public static HashMap<String,Object> sendToDest(String destRef,HashMap<String,Object> outMap){
         AcceptMassage acceptMassage;
