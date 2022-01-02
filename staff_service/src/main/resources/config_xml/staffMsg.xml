@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contexConfig>
+    <context>
+        <appId>itemFinanceApp</appId>
+        <taskId>itemList</taskId>
+        <nodeId>getStaffMsg</nodeId>
+    </context>
+    <functionCall>
+        <functionRef>getStaffMsgFunc</functionRef>
+    </functionCall>
+
+    <input>
+        <inParam>
+            <sourceNodeId>getItemList</sourceNodeId>
+            <sourceParamId>IdForEmp</sourceParamId>
+            <funcParamId>empNoList</funcParamId>
+            <paramType></paramType>
+            <memCache>LOCAL_MAP</memCache>
+        </inParam>
+    </input>
+
+    <output>
+        <destOutput>
+            <destRef>join_service</destRef>
+            <outParam>
+                <funcParamId>staffMsg</funcParamId>
+                <destParamId>staffForJoin</destParamId>
+            </outParam>
+        </destOutput>
+    </output>
+
+</contexConfig>

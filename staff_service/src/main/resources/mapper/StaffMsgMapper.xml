@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.employee.module.mapper.StaffMsgMapper">
+    <select id="queryStaffMsgByItemId" resultType="java.util.HashMap">
+        SELECT empNo,empName,empPhoneNo FROM employee WHERE empNo = #{empNo};
+    </select>
+</mapper>
