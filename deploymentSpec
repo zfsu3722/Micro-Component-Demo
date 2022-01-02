@@ -5,3 +5,6 @@ The images in goodsImg directory should be stored in a local directory of deploy
 Configuration 2:
 
 The XML files containing configurations relevant to SCONDAS API are stored in directory, src/main/resources/config_xml, of each service project. The configuration XML files of each service should be stored in a local directory of deployment specific to the service. A Micro-Component service stores the configuration of SCANDAS API configuration XML file directory settings in src/main/resources/config_properties/configXml.properties. A Micro-Component controller stores the configuration of control XML file directory settings in src/main/resources/config_properties/sequencePath.properties. The corresponding directories should be properly set in these configuration files.
+
+Configuration 3:
+A front end UI implemented by VUE stores controller connection configuration, baseURL, in src/request.js. The baseURL configuration of each front end UI should be set to the URL of the deployed Micro-Component controller used by the front end UI.
