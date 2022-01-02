@@ -25,7 +25,7 @@ public class AddGoodsToCart implements IJobBeanExecutor {
 
         goodsMsg = (HashMap<String, Object>) inParamsMap.get(IN_GOODS_MSG);
         retMap = (HashMap<String, Object>) shoppingCartService.insertShoppingCart(goodsMsg);
-        retMap.put(PublicConstant.SEND_FLAG,PublicConstant.NO_SEND_FLAG);
+        //retMap.put(PublicConstant.SEND_FLAG,PublicConstant.NO_SEND_FLAG);
         return retMap;
     }
 }
