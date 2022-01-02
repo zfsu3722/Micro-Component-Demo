@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contexConfig>
+    <context>
+        <appId>shoppingCartApp</appId>
+        <taskId>getGoodsForMail</taskId>
+        <nodeId>getGoodsList</nodeId>
+    </context>
+    <functionCall>
+        <functionRef>getGoodsForMailFunc</functionRef>
+    </functionCall>
+
+</contexConfig>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cart.module.mapper.ShoppingCartMapper">
+    <select id="insertShoppingCart" parameterType="java.util.Map">
+        INSERT INTO shoppingCart(goodsId,goodsName,goodsPrice,goodsDesc,goodsNumber,loginName,goodsType,goodsImg) VALUES
+            (#{goodsId,jdbcType=VARCHAR},#{goodsName,jdbcType=VARCHAR},#{goodsPrice,jdbcType=VARCHAR},
+            #{goodsDesc,jdbcType=VARCHAR},#{goodsNumber,jdbcType=VARCHAR},#{loginName,jdbcType=VARCHAR},#{goodsType,jdbcType=VARCHAR},#{goodsImg,jdbcType=VARCHAR});
+
+    </select>
+    <select id="getGoodsByUser" resultType="java.util.Map">
+        SELECT goodsId,goodsName,goodsPrice,goodsDesc,goodsType,goodsImg FROM shoppingcart WHERE loginName = #{loginName};
+    </select>
+    <delete id="deleteGoodsByMsg" parameterType="java.lang.String">
+        DELETE FROM shoppingCart WHERE goodsId = #{goodsId} AND loginName = #{loginName};
+    </delete>
+    <select id="getAllGoods" resultType="java.util.Map">
+        SELECT * FROM goods;
+    </select>
+</mapper>

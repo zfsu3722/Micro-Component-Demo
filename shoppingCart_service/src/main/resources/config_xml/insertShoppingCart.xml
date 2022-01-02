@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contexConfig>
+    <context>
+        <appId>shoppingCartApp</appId>
+        <taskId>addShoppingCart</taskId>
+        <nodeId>addShoppingCart</nodeId>
+    </context>
+    <functionCall>
+        <functionRef>addShoppingCartFunc</functionRef>
+    </functionCall>
+
+    <input>
+        <inParam>
+            <sourceNodeId>addShoppingCart</sourceNodeId>
+            <sourceParamId>goodsMap</sourceParamId>
+            <funcParamId>goodsMsg</funcParamId>
+            <paramType></paramType>
+            <memCache>CONTROL_MAP</memCache>
+        </inParam>
+    </input>
+
+</contexConfig>

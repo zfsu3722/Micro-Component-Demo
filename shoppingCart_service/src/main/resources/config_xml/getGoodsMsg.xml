@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contexConfig>
+    <context>
+        <appId>shoppingCartApp</appId>
+        <taskId>renderShoppingCart</taskId>
+        <nodeId>getGoods</nodeId>
+    </context>
+    <functionCall>
+        <functionRef>getGoodsFunc</functionRef>
+    </functionCall>
+
+    <input>
+        <inParam>
+            <sourceNodeId>getGoodFromDb</sourceNodeId>
+            <sourceParamId>rsc_loginName</sourceParamId>
+            <funcParamId>loginName</funcParamId>
+            <paramType></paramType>
+            <memCache>LOCAL_MAP</memCache>
+        </inParam>
+    </input>
+
+    <output>
+        <destOutput>
+            <destRef>join_service</destRef>
+            <outParam>
+                <funcParamId>goods_list</funcParamId>
+                <destParamId>goodsForJoin</destParamId>
+            </outParam>
+        </destOutput>
+    </output>
+
+</contexConfig>

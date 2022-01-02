@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contexConfig>
+    <context>
+        <appId>shoppingCartApp</appId>
+        <taskId>clearShoppingCart</taskId>
+        <nodeId>deleteGoods</nodeId>
+    </context>
+    <functionCall>
+        <functionRef>deleteGoodsFunc</functionRef>
+    </functionCall>
+
+    <input>
+        <inParam>
+            <sourceNodeId>clearShoppingCartLN</sourceNodeId>
+            <sourceParamId>rsc_loginName</sourceParamId>
+            <funcParamId>loginName</funcParamId>
+            <paramType></paramType>
+            <memCache>LOCAL_MAP</memCache>
+        </inParam>
+        <inParam>
+            <sourceNodeId>clearShoppingCartLN</sourceNodeId>
+            <sourceParamId>rsc_goodsId</sourceParamId>
+            <funcParamId>goodsId</funcParamId>
+            <paramType></paramType>
+            <memCache>LOCAL_MAP</memCache>
+        </inParam>
+    </input>
+
+
+</contexConfig>
