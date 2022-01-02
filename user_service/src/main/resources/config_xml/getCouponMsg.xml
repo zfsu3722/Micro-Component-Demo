@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contexConfig>
+    <context>
+        <appId>shoppingCartApp</appId>
+        <taskId>renderShoppingCart</taskId>
+        <nodeId>getCoupons</nodeId>
+    </context>
+    <functionCall>
+        <functionRef>getCouponsFunc</functionRef>
+    </functionCall>
+
+    <input>
+        <!--<inputId>输入数据标识</inputId>-->
+        <!--输入可以有0个或多个 -->
+        <inParam>
+            <sourceNodeId>getGoodFromDb</sourceNodeId>
+            <sourceParamId>rsc_loginName</sourceParamId>
+            <funcParamId>loginName</funcParamId>
+            <paramType></paramType> <!--其实这里是用不到的，protobuf等一些序列化机制有参数类型的映射-->
+            <memCache>LOCAL_MAP</memCache> <!--LOCAL_MAP（数据存在本地） or CONTROL_MAP（数据来自controller）-->
+        </inParam>
+    </input>
+
+    <output>
+        <destOutput>
+            <destRef>join_service</destRef>
+            <outParam>
+                <funcParamId>coupons_list</funcParamId>
+                <destParamId>couponsForJoin</destParamId>
+            </outParam>
+        </destOutput>
+    </output>
+
+</contexConfig>

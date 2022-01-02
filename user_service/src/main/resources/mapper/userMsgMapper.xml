@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.user.module.mapper.UserMsgMapper">
+    <select id="getCouponsByUser" resultType="java.util.Map">
+        SELECT couponId,couponDesc,loginName,goodsType FROM coupon WHERE loginName = #{loginName};
+    </select>
+    <delete id="deleteCouponByMsg" parameterType="java.lang.String">
+        DELETE FROM coupon WHERE couponId = #{couponId} AND loginName = #{loginName};
+    </delete>
+</mapper>
