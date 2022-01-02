@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nodes>
+    <taskId>getGoodsForMail</taskId>
+    <sequence>
+        <node>
+            <id>getGoodsList</id>
+            <step>1</step>
+            <execRef>getAllGoods</execRef>
+            <refTag>LOCAL_REF</refTag>
+        </node>
+    </sequence>
+</nodes>

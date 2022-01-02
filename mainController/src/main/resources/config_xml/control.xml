@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nodes>
+    <taskId>itemRefundList</taskId>
+    <sequence>
+
+        <node>
+            <id>getItemRefundList</id>
+            <step>3</step>
+            <execRef>user_service</execRef>
+            <refTag>LOCAL_REF</refTag>
+        </node>
+
+    </sequence>
+</nodes>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<nodes>
+    <taskId>itemLoginList</taskId>
+    <sequence>
+
+        <node>
+            <id>getLoginList</id>
+            <step>1</step>
+            <execRef>shop_service</execRef>
+            <refTag>LOCAL_REF</refTag>
+        </node>
+
+
+    </sequence>
+</nodes>

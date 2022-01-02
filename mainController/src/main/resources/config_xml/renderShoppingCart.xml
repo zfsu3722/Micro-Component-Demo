@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nodes>
+    <taskId>renderShoppingCart</taskId>
+    <sequence>
+
+        <node>
+            <id>getGoodFromDb</id>
+            <step>1</step>
+            <execRef>sendToSUFunc</execRef>
+            <refTag>LOCAL_REF</refTag>
+        </node>
+        <node>
+            <id>getGoods</id>
+            <step>2</step>
+            <execRef>shoppingCart_service</execRef>
+            <refTag>REMOTE_REF</refTag>
+        </node>
+        <node>
+            <id>getCoupons</id>
+            <step>3</step>
+            <execRef>user_service</execRef>
+            <refTag>REMOTE_REF</refTag>
+        </node>
+        <node>
+            <id>getMsgJoin</id>
+            <step>4</step>
+            <execRef>join_service</execRef>
+            <refTag>REMOTE_REF</refTag>
+        </node>
+        <node>
+            <id>returnShoppingCart</id>
+            <step>5</step>
+            <execRef>returnGoodsFunc</execRef>
+            <refTag>LOCAL_REF</refTag>
+        </node>
+
+    </sequence>
+</nodes>

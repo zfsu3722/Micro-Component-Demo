@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nodes>
+    <taskId>clearShoppingCart</taskId>
+    <sequence>
+
+        <node>
+            <id>clearShoppingCartLN</id>
+            <step>1</step>
+            <execRef>sendToSUForClear</execRef>
+            <refTag>LOCAL_REF</refTag>
+        </node>
+        <node>
+            <id>deleteGoods</id>
+            <step>2</step>
+            <execRef>shoppingCart_service</execRef>
+            <refTag>REMOTE_REF</refTag>
+        </node>
+        <node>
+            <id>deleteCoupon</id>
+            <step>3</step>
+            <execRef>user_service</execRef>
+            <refTag>REMOTE_REF</refTag>
+        </node>
+
+        <node>
+            <id>returnClearMsg</id>
+            <step>5</step>
+            <execRef>returnClearFunc</execRef>
+            <refTag>LOCAL_REF</refTag>
+        </node>
+
+    </sequence>
+</nodes>

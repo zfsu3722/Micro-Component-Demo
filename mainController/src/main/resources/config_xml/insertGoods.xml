@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nodes>
+    <taskId>addShoppingCart</taskId>
+    <sequence>
+
+        <node>
+            <id>addShoppingCart</id>
+            <step>1</step>
+            <execRef>insertGoodsFunc</execRef>
+            <refTag>LOCAL_REF</refTag>
+        </node>
+
+    </sequence>
+</nodes>
