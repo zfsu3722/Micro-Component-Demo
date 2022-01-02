@@ -11,6 +11,7 @@ import java.util.Map;
 
 
 public class MainWorkFlowController {
+	public final static String CONTROL_FLAG = "CONTROL";
 
 	public static Map<String,Object> JobExececute(String key,String requestId,HashMap<String, Object> control_param){
 
@@ -34,8 +35,11 @@ public class MainWorkFlowController {
 		Context context;
 		List<OutputParam> outParams;
 		HashMap<String, Object> returnMap = null;
+		HashMap<String, Object> sendReturnMap = null;
 		Map<String,Object> outPutMap = null;
+		HashMap<String,Object> outMap;
 		String preKey;
+		String destRef;
 		String send_flag;
 
 		outParams = nodeConfig.getOutParam();
@@ -45,23 +49,37 @@ public class MainWorkFlowController {
 		jobBeanExecutor = (IJobBeanExecutor) SpringContextUtil.getBean(execBeanName);
 		try {
 			outPutMap = jobBeanExecutor.ExecuteJobBean(inParamsMap);
-			send_flag = (String) outPutMap.get(PublicConstant.SEND_FLAG);
-			if (send_flag.equals(PublicConstant.YES_SEND_FLAG)){
-				outPutMap.remove(PublicConstant.SEND_FLAG);
-				for (OutputParam o : outParams){
+
+			for (OutputParam o : outParams){
+				destRef = o.getDestRef();
+				if(o.getDestRef().equals(CONTROL_FLAG)){
 					returnMap = ParseOutSend.parseDestRef(o,preKey, (HashMap<String, Object>) outPutMap);
-					if (!isOk(returnMap)){
-						System.out.println("Data transfer failed:"+o.toString());
-						break;
-					}
+				}else {
+					outMap = ParseOutSend.parseDestRef(o,preKey, (HashMap<String, Object>) outPutMap);
+					sendReturnMap = ParseOutSend.sendToDest(destRef,outMap);
 				}
-			}else if (send_flag.equals(PublicConstant.NO_SEND_FLAG)){
-				return outPutMap;
+				if (!o.getDestRef().equals(CONTROL_FLAG)&&!isOk(sendReturnMap)){
+					System.out.println("Data transfer failed:"+o.toString());
+					break;
+				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
+		if(sendReturnMap!=null)
+		{
+			if(returnMap==null) {
+				returnMap = new HashMap<String, Object>();
+			}
+			if(!isOk(sendReturnMap)) {
+				returnMap.put("flag", 0);
+			}
+			else
+			{
+				returnMap.put("flag", 1);
+			}
+		}
 		return returnMap;
 	}
 	private static boolean isOk(HashMap<String, Object> returnMap){
@@ -74,5 +92,6 @@ public class MainWorkFlowController {
 		}else if (i == 0){}
 		return ret;
 	}
+
 
 }
