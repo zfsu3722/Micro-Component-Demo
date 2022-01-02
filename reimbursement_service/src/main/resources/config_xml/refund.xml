@@ -17,5 +17,18 @@
             <memCache>CONTROL_MAP</memCache>
         </inParam>
     </input>
+    <output>
+        <destOutput>
+            <destRef>CONTROL</destRef>
+            <outParam>
+                <funcParamId>returnParam</funcParamId>
+                <destParamId>returnParam</destParamId>
+            </outParam>
+            <outParam>
+                <funcParamId>flag</funcParamId>
+                <destParamId>flag</destParamId>
+            </outParam>
+        </destOutput>
+    </output>
 
 </contexConfig>
