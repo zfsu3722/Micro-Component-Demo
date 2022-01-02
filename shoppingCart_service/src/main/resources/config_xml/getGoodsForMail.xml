@@ -8,5 +8,18 @@
     <functionCall>
         <functionRef>getGoodsForMailFunc</functionRef>
     </functionCall>
+    <output>
+        <destOutput>
+            <destRef>CONTROL</destRef>
+            <outParam>
+                <funcParamId>flag</funcParamId>
+                <destParamId>flag</destParamId>
+            </outParam>
+            <outParam>
+                <funcParamId>retMsg</funcParamId>
+                <destParamId>retMsg</destParamId>
+            </outParam>
+        </destOutput>
+    </output>
 
 </contexConfig>
