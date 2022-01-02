@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contexConfig>
+    <context>
+        <appId>shoppingCartApp</appId>
+        <taskId>renderShoppingCart</taskId>
+        <nodeId>getMsgJoin</nodeId>
+    </context>
+    <functionCall>
+        <functionRef>getMsgJoinFunc</functionRef>
+    </functionCall>
+
+    <input>
+
+        <inParam>
+            <sourceNodeId>getGoods</sourceNodeId>
+            <sourceParamId>goodsForJoin</sourceParamId>
+            <funcParamId>goodsList</funcParamId>
+            <paramType></paramType>
+            <memCache>LOCAL_MAP</memCache>
+        </inParam>
+
+        <inParam>
+            <sourceNodeId>getCoupons</sourceNodeId>
+            <sourceParamId>couponsForJoin</sourceParamId>
+            <funcParamId>couponsList</funcParamId>
+            <paramType></paramType>
+            <memCache>LOCAL_MAP</memCache>
+        </inParam>
+    </input>
+
+
+    <output>
+        <destOutput>
+            <destRef>MyController_service</destRef>
+            <outParam>
+                <funcParamId>joinList</funcParamId>
+                <destParamId>itemMsgRender</destParamId>
+            </outParam>
+        </destOutput>
+
+    </output>
+
+</contexConfig>

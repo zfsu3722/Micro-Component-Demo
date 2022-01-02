@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contexConfig>
+    <context>
+        <appId>itemFinanceApp</appId>
+        <taskId>itemList</taskId>
+        <nodeId>getItemJoin</nodeId>
+    </context>
+    <functionCall>
+        <functionRef>getJoinInfoFunc</functionRef>
+    </functionCall>
+
+    <input>
+
+        <inParam>
+            <sourceNodeId>getItemList</sourceNodeId>
+            <sourceParamId>itemForJoin</sourceParamId>
+            <funcParamId>itemList</funcParamId>
+            <paramType></paramType>
+            <memCache>LOCAL_MAP</memCache>
+        </inParam>
+
+        <inParam>
+            <sourceNodeId>getStaffMsg</sourceNodeId>
+            <sourceParamId>staffForJoin</sourceParamId>
+            <funcParamId>staffMsg</funcParamId>
+            <paramType></paramType>
+            <memCache>LOCAL_MAP</memCache> <!--LOCAL_MAP(Data comes from others service) or CONTROL_MAP(Data comes from controller)-->
+        </inParam>
+    </input>
+
+
+    <output>
+        <destOutput>
+            <destRef>controller_service</destRef>
+            <outParam>
+                <funcParamId>joinItemList</funcParamId>
+                <destParamId>itemMsgRender</destParamId>
+            </outParam>
+        </destOutput>
+
+    </output>
+
+</contexConfig>
