@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contexConfig>
+    <context>
+        <appId>itemFinanceApp</appId>
+        <taskId>itemList</taskId>
+        <nodeId>getItemList</nodeId>
+    </context>
+    <functionCall>
+        <functionRef>getItemListFunc</functionRef>
+    </functionCall>
+
+    <output>
+
+        <destOutput>
+            <destRef>staff_service</destRef>
+            <outParam>
+                <funcParamId>empNo</funcParamId>
+                <destParamId>IdForEmp</destParamId>
+            </outParam>
+        </destOutput>
+        <destOutput>
+            <destRef>join_service</destRef>
+            <outParam>
+                <funcParamId>itemList</funcParamId>
+                <destParamId>itemForJoin</destParamId>
+            </outParam>
+        </destOutput>
+    </output>
+
+</contexConfig>
