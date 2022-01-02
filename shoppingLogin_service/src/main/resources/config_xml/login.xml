@@ -27,5 +27,18 @@
             <memCache>CONTROL_MAP</memCache>
         </inParam>
     </input>
+    <output>
+        <destOutput>
+            <destRef>CONTROL</destRef>
+            <outParam>
+                <funcParamId>loginName</funcParamId>
+                <destParamId>loginName</destParamId>
+            </outParam>
+            <outParam>
+                <funcParamId>responseMsg</funcParamId>
+                <destParamId>responseMsg</destParamId>
+            </outParam>
+    </destOutput>
+    </output>
 
 </contexConfig>
