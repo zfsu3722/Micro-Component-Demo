@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contexConfig>
+    <context>
+        <appId>shoppingCartApp</appId>
+        <taskId>itemLoginList</taskId>
+        <nodeId>getLoginList</nodeId>
+    </context>
+    <functionCall>
+        <functionRef>login</functionRef>
+    </functionCall>
+
+    <input>
+
+        <inParam>
+            <sourceNodeId>getLoginList</sourceNodeId>
+            <sourceParamId>IdForUserName</sourceParamId>
+            <funcParamId>empUserName</funcParamId>
+            <paramType></paramType>
+            <memCache>CONTROL_MAP</memCache>
+        </inParam>
+
+        <inParam>
+            <sourceNodeId>getLoginList</sourceNodeId>
+            <sourceParamId>IdForPassWord</sourceParamId>
+            <funcParamId>empPassWord</funcParamId>
+            <paramType></paramType>
+            <memCache>CONTROL_MAP</memCache>
+        </inParam>
+    </input>
+
+</contexConfig>
